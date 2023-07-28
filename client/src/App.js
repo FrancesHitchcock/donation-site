@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import "./App.css";
+import axios from "axios";
+
+import Products from "./components/Products/Products";
 
 function App() {
+  const [productsToDisplay, setProductsToDisplay] = useState([]);
+  // const [filterTerm, setFilterTerm] = useState("");
+
+  useEffect(() => getAllProducts, []);
+
+  async function getAllProducts() {
+    const res = await axios.get("http://localhost:8080/products");
+    setProductsToDisplay(res.data);
+  }
+
+  async function handleChange(term) {
+    // setFilterTerm("electrical");
+
+    const res = await axios.get(`http://localhost:8080/products?type=${term}`);
+    setProductsToDisplay(res.data);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Choose your products</h1>
+      {productsToDisplay && (
+        <Products
+          productsToDisplay={productsToDisplay}
+          handleChange={handleChange}
+        />
+      )}
     </div>
   );
 }
