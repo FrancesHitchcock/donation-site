@@ -1,0 +1,45 @@
+[
+  {
+    "_id": "1",
+    "type": "electrical",
+    "name": "kettle",
+    "description": "Very nice kettle. Fully working.",
+    "price": 2.5
+  },
+  {
+    "_id": "2",
+    "type": "clothing",
+    "name": "trousers",
+    "description": "Ladies' trousers, pink, size 12.",
+    "price": 5.0
+  },
+  {
+    "_id": "3",
+    "type": "books",
+    "name": "To Kill A Mockingbird",
+    "description": "The famous novel by Harper Lee",
+    "price": 1.5
+  },
+
+  {
+    "_id": "4",
+    "type": "electrical",
+    "name": "hair dryer",
+    "description": "Excellent condition. Includes attachments.",
+    "price": 30.5
+  },
+  {
+    "_id": "5",
+    "type": "clothing",
+    "name": "T-shirt",
+    "description": "Adults size large, grey. ",
+    "price": 3.25
+  },
+  {
+    "_id": "6",
+    "type": "clothing",
+    "name": "shoes",
+    "description": "Children's shoes size 3. Blue. Good condition.",
+    "price": 12.5
+  }
+]
