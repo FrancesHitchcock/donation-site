@@ -11,14 +11,16 @@ function App() {
   useEffect(() => getAllProducts, []);
 
   async function getAllProducts() {
-    const res = await axios.get("http://localhost:8080/products");
+    const res = await axios.get("https://donation-site.onrender.com//products");
     setProductsToDisplay(res.data);
   }
 
   async function handleChange(term) {
     // setFilterTerm("electrical");
 
-    const res = await axios.get(`http://localhost:8080/products?type=${term}`);
+    const res = await axios.get(
+      `https://donation-site.onrender.com//products?type=${term}`
+    );
     setProductsToDisplay(res.data);
   }
 
@@ -36,3 +38,5 @@ function App() {
 }
 
 export default App;
+
+// https://donation-site.onrender.com/
