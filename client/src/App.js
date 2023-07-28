@@ -11,28 +11,26 @@ function App() {
   useEffect(() => getAllProducts, []);
 
   async function getAllProducts() {
-    const res = await axios.get("https://donation-site.onrender.com//products");
+    const res = await axios.get("http://localhost:8080/products");
     setProductsToDisplay(res.data);
   }
 
   async function handleChange(term) {
     // setFilterTerm("electrical");
 
-    const res = await axios.get(
-      `https://donation-site.onrender.com//products?type=${term}`
-    );
+    const res = await axios.get(`http://localhost:8080/products?type=${term}`);
     setProductsToDisplay(res.data);
   }
 
   return (
     <div className="App">
       <h1>Choose your products</h1>
-      {productsToDisplay && (
-        <Products
-          productsToDisplay={productsToDisplay}
-          handleChange={handleChange}
-        />
-      )}
+      {/* {productsToDisplay && ( */}
+      <Products
+        productsToDisplay={productsToDisplay}
+        handleChange={handleChange}
+      />
+      {/* )} */}
     </div>
   );
 }
