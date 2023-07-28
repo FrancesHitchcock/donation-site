@@ -8,7 +8,9 @@ function App() {
   const [productsToDisplay, setProductsToDisplay] = useState([]);
   // const [filterTerm, setFilterTerm] = useState("");
 
-  useEffect(() => getAllProducts, []);
+  useEffect(() => {
+    getAllProducts();
+  }, []);
 
   async function getAllProducts() {
     const res = await axios.get("https://donation-site.onrender.com/products");
