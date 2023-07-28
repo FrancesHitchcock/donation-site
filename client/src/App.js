@@ -6,7 +6,6 @@ import Products from "./components/Products/Products";
 
 function App() {
   const [productsToDisplay, setProductsToDisplay] = useState([]);
-  // const [filterTerm, setFilterTerm] = useState("");
 
   useEffect(() => {
     getAllProducts();
@@ -18,8 +17,6 @@ function App() {
   }
 
   async function handleChange(term) {
-    // setFilterTerm("electrical");
-
     const res = await axios.get(
       `https://donation-site.onrender.com/products?type=${term}`
     );
@@ -29,12 +26,10 @@ function App() {
   return (
     <div className="App">
       <h1>Choose your products</h1>
-      {/* {productsToDisplay && ( */}
       <Products
         productsToDisplay={productsToDisplay}
         handleChange={handleChange}
       />
-      {/* )} */}
     </div>
   );
 }
@@ -42,3 +37,5 @@ function App() {
 export default App;
 
 // https://donation-site.onrender.com/
+
+// http://localhost:8080
